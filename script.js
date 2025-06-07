@@ -15,7 +15,7 @@ let currentIndex = 0;
 let score = 0;
 let quizQuestions = [];
 let timer;
-let timeLeft = 10;
+let timeLeft = 120;
 
 startBtn.addEventListener("click", () => {
     const category = categorySelect.value;
@@ -38,7 +38,7 @@ startBtn.addEventListener("click", () => {
 
 function showQuestion() {
     clearInterval(timer);
-    timeLeft = 10;
+    timeLeft = 120;
     document.getElementById("time").innerText = timeLeft;
     feedback.innerText = "";
     feedback.className = "mt-4 text-lg font-semibold";
@@ -62,7 +62,7 @@ function showQuestion() {
                 feedback.innerText = `Incorrect! Correct answer: ${q.answer}`;
                 feedback.className = "mt-4 text-lg font-semibold text-red-500 animate-pulse-slow";
             }
-            setTimeout(nextQuestion, 1000);
+            setTimeout(nextQuestion, 12000);
         });
         optionBox.appendChild(btn);
     });
